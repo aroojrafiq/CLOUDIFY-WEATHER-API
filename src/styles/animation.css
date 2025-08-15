@@ -1,0 +1,63 @@
+/* ☀️ Sun Animation */
+.sun {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #FFD93D 60%, #FFC300 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+  animation: sunMove 10s infinite alternate ease-in-out;
+}
+
+@keyframes sunMove {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+
+/* ☁️ Cloud Animation */
+.cloud {
+  position: absolute;
+  background: #fff;
+  background: linear-gradient(to bottom, #fff 0%, #f1f1f1 100%);
+  border-radius: 50%;
+  animation: cloudMove 30s linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  background: linear-gradient(to bottom, #fff 0%, #f1f1f1 100%);
+  border-radius: 50%;
+}
+
+.cloud::before {
+  width: 60%;
+  height: 60%;
+  top: -20%;
+  left: -30%;
+}
+
+.cloud::after {
+  width: 50%;
+  height: 50%;
+  top: -10%;
+  right: -25%;
+}
+
+@keyframes cloudMove {
+  0% { transform: translateX(-150px); }
+  100% { transform: translateX(100vw); }
+}
+
+/* Cloud sizes */
+.cloud.small { width: 60px; height: 60px; top: 50px; }
+.cloud.medium { width: 100px; height: 100px; top: 120px; }
+.cloud.large { width: 150px; height: 150px; top: 200px; }
